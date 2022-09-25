@@ -9,4 +9,4 @@ class Product(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.name}-{self.created.strftime('%d/%m/%Y')}"
+        return f"{self.name.capitalize()} - Created on: {self.created.strftime('%d/%m/%Y')}"

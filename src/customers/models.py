@@ -6,4 +6,4 @@ class Customer(models.Model):
     logo = models.ImageField(upload_to='customers', default='no_picture.png')
 
     def __str__(self):
-        return str(self.name)
+        return self.name.capitalize()
