@@ -2,7 +2,6 @@ from django.db import models
 from django.shortcuts import reverse
 from django.utils import timezone
 
-
 from customers.models import Customer
 from products.models import Product
 from profiles.models import Profile
@@ -28,7 +27,7 @@ class Position(models.Model):
         return sale_obj.customer.name
 
     def __str__(self):
-        return f"id: {self.id}, product: {self.product.name}, quantity: {self.quantity}"
+        return f"Id: {self.id}, Product: {self.product.name}, Quantity: {self.quantity}"
 
 
 class Sale(models.Model):
@@ -41,7 +40,8 @@ class Sale(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"Sales for the amount of ${self.total_price}"
+        total_currency = "${:,.2f}".format(self.total_price)
+        return f"Sales for the amount of ${total_currency}"
 
     def get_absolute_url(self):
         return reverse('sales:detail', kwargs={'pk': self.pk})
@@ -64,4 +64,4 @@ class CSV(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.file_name)
+        return self.file_name

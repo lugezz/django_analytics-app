@@ -1,10 +1,11 @@
 import base64
-import uuid
-from customers.models import Customer
-from profiles.models import Profile
 from io import BytesIO
 import matplotlib.pyplot as plt
 import seaborn as sns
+import uuid
+
+from customers.models import Customer
+from profiles.models import Profile
 
 
 def generate_code():
