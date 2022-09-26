@@ -40,7 +40,9 @@ class Sale(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        total_currency = "${:,.2f}".format(self.total_price)
+        total_currency = 0
+        if self.total_price:
+            total_currency = "${:,.2f}".format(self.total_price)
         return f"Sales for the amount of ${total_currency}"
 
     def get_absolute_url(self):
