@@ -1,4 +1,4 @@
-from django.forms import ChoiceField, DateInput, DateField, Form
+from django import forms
 
 CHART_CHOICES = (
     ('#1', 'Bar chart'),
@@ -12,8 +12,8 @@ RESULT_CHOICES = (
 )
 
 
-class SalesSearchForm(Form):
-    date_from = DateField(widget=DateInput(attrs={'type': 'date'}))
-    date_to = DateField(widget=DateInput(attrs={'type': 'date'}))
-    chart_type = ChoiceField(choices=CHART_CHOICES)
-    results_by = ChoiceField(choices=RESULT_CHOICES)
+class SalesSearchForm(forms.Form):
+    date_from = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+    date_to = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+    chart_type = forms.ChoiceField(choices=CHART_CHOICES)
+    results_by = forms.ChoiceField(choices=RESULT_CHOICES)

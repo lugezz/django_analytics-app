@@ -40,7 +40,7 @@ home
 <form action="" method="POST">
     {% csrf_token %}
     {{search_form|crispy}}
-    <button type="submit" class="btn btn-primary mt-3">search</button>
+    <button type="submit" class="btn btn-primary mt-3">Search</button>
 </form>
 <br>
 
@@ -61,6 +61,6 @@ home
 {% endif %}
 
 <br>
-<button class="btn btn-primary not-visible" id="report-btn" data-bs-toggle="modal" data-bs-target="#reportModal">add report</button>
+<button class="btn btn-primary not-visible" id="report-btn" data-bs-toggle="modal" data-bs-target="#reportModal">Add report</button>
 
 {% endblock content %}

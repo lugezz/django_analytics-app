@@ -1,13 +1,13 @@
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView
-from .models import Sale
-from sales.forms import SalesSearchForm
-from reports.forms import ReportForm
-import pandas as pd
-from .utils import get_customer_from_id, get_salesman_from_id, get_chart
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+import pandas as pd
+
+from reports.forms import ReportForm
+from sales.forms import SalesSearchForm
+from sales.models import Sale
+from sales.utils import get_customer_from_id, get_salesman_from_id, get_chart
 
 
 @login_required

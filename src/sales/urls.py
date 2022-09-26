@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import (
+
+from sales.views import (
     home_view,
-    SaleListView,
     SaleDetailView,
+    SaleListView,
 )
 
 app_name = 'sales'
